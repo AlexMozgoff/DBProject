@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DBProject 1.0">
+    <output-path>$PROJECT_DIR$/out/artifacts/DBProject_1_0</output-path>
+    <root id="archive" name="DBProject 1.0.war">
+      <element id="javaee-facet-resources" facet="DBProject 1.0/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="DBProject 1.0" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mssql-jdbc-7.4.1.jre8" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
