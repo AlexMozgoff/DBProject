@@ -1,0 +1,13 @@
+regboxes
+
+	position: absolute;
+	border: 3px solid #00416a;
+  	top: 50%;
+	left: 50%;
+	margin-left: auto;
+	margin-right: -50%;
+  	padding: 15px;
+  	width: 400px;
+  	text-align: center;	
+	border-radius: 8px;
+	transform: translate(-50%, -50%)

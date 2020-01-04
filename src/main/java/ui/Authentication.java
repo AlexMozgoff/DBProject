@@ -1,6 +1,6 @@
 package main.java.ui;
 
-import main.java.database.Database;
+import main.java.database.DatabaseSelect;
 import main.java.logic.Logic;
 
 import javax.servlet.ServletException;
@@ -16,20 +16,41 @@ public class Authentication extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
 
-        Database database = new Database();
-        String passwordFromDB = database.getUserPassword(login);
-        String role = database.getUserRole(login);
-        int id = Logic.getUserId(login, role);
+        Object[] input = new Object[]{login, password};
+        if (!Logic.isEmpty(input)) {
+            if (!Logic.hasRestrictedSymbols(input)) {
 
-        if (password.equals(passwordFromDB) && !(role == null) && !(id == 0)) {
-            request.getSession().setAttribute("isAuthorized", true);
-            request.getSession().setAttribute("id", id);
-            request.getSession().setAttribute("login", login);
-            request.getSession().setAttribute("role", role);
-            request.getRequestDispatcher("mainpage").forward(request, response);
+                DatabaseSelect database = new DatabaseSelect();
+                String passwordFromDB = database.getUserPassword(login);
+                String role = database.getUserRole(login);
+
+                if (password.equals(passwordFromDB)) {
+                    int id;
+                    if (role.equals("admin")) {
+                        id = -1;
+                    } else {
+                        id = Logic.getUserId(login);
+                    }
+
+                    if (!(role == null) && !(id == 0)) {
+                        request.getSession().setAttribute("isAuthorized", true);
+                        request.getSession().setAttribute("id", id);
+                        request.getSession().setAttribute("login", login);
+                        request.getSession().setAttribute("role", role);
+                        request.getRequestDispatcher("mainpage").forward(request, response);
+                    } else {
+                        response.sendRedirect("something");
+                    }
+                } else {
+                    response.sendRedirect("passworderror.jsp");
+                }
+            } else {
+                response.sendRedirect("restrictedsymbolserror.jsp");
+            }
         } else {
-            //FIXME(отправить сообщение о неверном логине или пароле)
+            response.sendRedirect("emptyfielderror.jsp");
         }
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

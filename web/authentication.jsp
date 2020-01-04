@@ -13,14 +13,14 @@
 <hr noshade id="line2">
 
 <header>
-<div class="logo">CarTrade</div>
+<div class="logo"><a href="mainpage">CarTrade</a></div>
 	<ul class="menu">
-		<li><a href="registration.html" class="link">Регистрация</a></li>
+		<li><a href="registration.jsp" class="link">Регистрация</a></li>
 		<li><a href="authentication.jsp" class="link">Вход</a></li>
 	</ul>
 </header>
 
-<form action = "authentication">
+<form action = "authentication" class="center authSpace">
 	<div class = "regTextboxes">
 		<div class = "registrationField">
 			<label for "login" class="label">Логин </label>
@@ -28,7 +28,7 @@
 		</div>
 		<div class = "registrationField">
 			<label for "password" class="label">Пароль </label>
-			<input type="text" id="password" class="input" name="password">
+			<input type="password" id="password" class="input" name="password">
 		</div>
 		<input type="submit" value="Вход" id="enter">
 	</div>

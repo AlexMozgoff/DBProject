@@ -46,6 +46,15 @@ body{
 	text-decoration: none;
 }
 
+.logo > a {
+	text-decoration: none;
+}
+
+.selectorId {
+	margin: 10px;
+	width: 80%;
+}
+
 .textboxes{
 	position: absolute;
 	border: 3px solid #00416a;
@@ -58,12 +67,12 @@ body{
 }
 
 .input{
-	position: relative;
 	top: 10px;
 	right: 8px;
 	border-radius: 2px;
 	height: 25px;
 	width: 300px;
+	margin-top: 10px;
 }
 
 
@@ -85,6 +94,23 @@ body{
 	margin-top: 85px;
 }
 
+.regSpace {
+	padding-top: 6% ;
+}
+
+.fillBottom {
+	margin-bottom: 10%;
+}
+
+.textCenter {
+	text-align: center;
+	font-weight: bold;
+}
+
+.authSpace {
+	padding-top: 20%;
+}
+
 #enter{
 	width: 150px;
 	height: 25px;
@@ -95,6 +121,11 @@ body{
 	font-size: 18px;
 	font-family: century gothic;
 	margin-top: 15px;
+}
+
+.logic {
+	top: 20px;
+	position: relative;
 }
 
 #regenter{
@@ -113,6 +144,15 @@ body{
 	padding: 10px;
 }
 
+.icon {
+	height: 16px;
+	width: 16px;
+}
+
+.noBorders {
+	border: white;
+}
+
 .regBody{
 	width: 100%;
     height: 100%;
@@ -123,23 +163,23 @@ body{
 }
 
 .regTextboxes{
-	position: absolute;
 	border: 3px solid #00416a;
-  	top: 50%;
-	left: 50%;
-	margin-left: auto;
-	margin-right: -50%;
+	margin-left: 29%;
+	margin-right: 29%;
   	padding: 15px;
-  	width: 400px;
+  	width: 40%;
   	text-align: center;	
 	border-radius: 8px;
-	transform: translate(-50%, -50%)
 }
 
 #foot{
 	position: relative;
 	text-align: center;
 	top: 25px;
+}
+
+.agreementFooter {
+	position: relative;
 }
 
 #line1{
@@ -209,7 +249,7 @@ body{
 
 .label{
 	font-size: 19px;
-	padding: 15px;
+	padding: 20px;
 }
 
 #passwordChange{
@@ -293,7 +333,23 @@ body{
 #tab_2:checked ~ #txt_2,
 #tab_3:checked ~ #txt_3 { display: block; }
 
+.hidden {
+	visibility: hidden;
+}
+
 .mainPageButton {
+	width: auto;
+	height: 25px;
+	text-font: 20px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 3px;
+	font-size: 16px;
+	font-family: century gothic;
+	margin-top: 15px;
+}
+
+.tableButton {
 	width: auto;
 	height: 25px;
 	text-font: 20px;
@@ -305,19 +361,19 @@ body{
 }
 
 .dbTable {
-	position: fixed;
-	width: 50%;
-	margin-left: 25%;
-	margin-right: 25%;
+	position: relative;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
 	border-collapse: collapse;
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 th {
 	background: #cfd1cd;
 	color: white;
-	padding: 10px 10px;
+	padding: 5px 5px;
 	border-style: solid;
 	border-width: 0 1px 1px 0;
 	border-color: #00416a;
@@ -325,7 +381,7 @@ th {
 
 .dbTable td {
 	color: #00416a;
-	padding: 5px 10px;
+	padding: 5px 5px;
 	border-style: solid;
 	border-width: 0 1px 1px 0;
 	border-color: #00416a;
@@ -333,6 +389,26 @@ th {
 
 .dbTable tr {
 	border: 2px solid #00416a;
+}
+
+.addCarPurchaseAgreement {
+	position: relative;
+	width: 6%;
+	margin-left: 47%;
+	padding-bottom: 10%;
+	top: 20px;
+}
+
+.fields {
+	position: relative;
+	width: 50%;
+	font-size: 18px;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.field {
+	padding: 10px;
 }
 
 

@@ -1,7 +1,9 @@
 package main.java.ui.tables;
 
-import main.java.database.Database;
-import main.java.database.objects.Dealer;
+import main.java.database.DatabaseSelect;
+import main.java.database.entities.Dealer;
+import main.java.database.entities.TestDrive;
+import main.java.logic.Logic;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,11 +17,15 @@ import java.util.List;
 public class DealerList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Database db = new Database();
-        List<Dealer> dealers = db.getDealersList();
+        if (Logic.isAuthorized(req)) {
+            DatabaseSelect db = new DatabaseSelect();
+            List<Dealer> dealers = db.getDealersList();
 
-        req.setAttribute("dealersList", dealers);
-        req.getRequestDispatcher("dealers.jsp").forward(req, resp);
+            req.setAttribute("dealersList", dealers);
+            req.getRequestDispatcher("dealers.jsp").forward(req, resp);
+        } else {
+            req.getRequestDispatcher("authentication.jsp").forward(req, resp);
+        }
     }
 }
 

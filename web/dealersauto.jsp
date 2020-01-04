@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="main.java.database.objects.Auto" %>
+<%@ page import="main.java.database.entities.Auto" %>
 <%@ page import="java.util.List" %>
 <html>
 
@@ -16,10 +16,9 @@
 <hr noshade id="line2">
 
 <header>
-	<div class="logo">CarTrade</div>
+	<div class="logo"><a href="mainpage">CarTrade</a></div>
 	<ul class="menu">
-		<li><a href="registration.html" class="link">Регистрация</a></li>
-		<li><a href="authentication.jsp" class="link">Вход</a></li>
+		<li><a href="exit" class="link">Выход</a></li>
 	</ul>
 	</div>
 </header>
@@ -27,7 +26,7 @@
 
 
 <div class = "space center"></div>
-
+<div class="center">
 <table class="dbTable">
 	<tr>
 		<th>Id</th>
@@ -52,10 +51,13 @@
 		<td align="center"><%=dealersList.get(i).getMileage()%></td>
 		<td align="center"><%=dealersList.get(i).getPrice()%></td>
 		<td align="center"><%=dealersList.get(i).isSold()%></td>
+		<td align="center"><a href="deleteauto?id=<%=dealersList.get(i).getId()%>"><img
+				src="source/cross.svg" class="icon noBorders"></a></td>
 	</tr>
 	<%}}%>
 
 </table>
+</div>
 
 <footer>
 <div id="foot">
